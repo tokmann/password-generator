@@ -118,9 +118,8 @@ public class PasswordGenerator {
      * @return true, если есть хотя бы один "распознаваемый" спецсимвол
      */
     public boolean containsSpecialChar(String password) {
-        String checkedChars = "!@#$%"; // BUG: неполный набор символов (должен совпадать со SPECIAL_CHARS)
         for (char c : password.toCharArray()) {
-            if (checkedChars.indexOf(c) >= 0) {
+            if (SPECIAL_CHARS.indexOf(c) >= 0) {
                 return true;
             }
         }
